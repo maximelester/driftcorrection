@@ -19,6 +19,9 @@ More formats may be added at a later date.
 
 ## How to use?
 
+Using the driftcorrection library is really straightforward. Typically it is convenient to use the following steps.
+For more detail, check the example file ``exec.py``, which corrects an atomically-resolved STM image of highly-oriented pyrolithic graphite.
+
 ### 1) Loading the data
 
 The data can be loaded into a DriftCorrection object as follows:
