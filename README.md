@@ -67,6 +67,8 @@ Lastly, if satisfied with the warped image, the warped real space image and/or t
 ``DriftCorrection.SaveData(which)``, with ``which='real'`` for real space image only, ``which='fft'`` or ``which='both'``.
 
 
+## Others
 
+If useful, please cite the following article (DOI: to be disclosed). If you have any questions or queries, please send an email to maxime.lester@fis.uni.lodz.pl (or pawel.kowalczyk@uni.lodz.pl)
 
 
