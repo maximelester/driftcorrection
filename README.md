@@ -8,6 +8,18 @@ The python library (``driftcorrection.py``) allows to load and distort SPM image
 
 ![figure](figure.png)
 
+## Dependencies
+
+The following libraries are required (if not installed, copy/paste instructions between brackets into the terminal):
+-``numpy`` (``pip install numpy``)
+-``matplotlib`` (``pip install matplotlib``)
+-``cv2`` (``pip install opencv-python``)
+
+The following libraries are optional (depending on the type of image format):
+-``omicronscala`` (``pip install omicronscala``) for par files
+-``access2thematrix`` (``pip install access2thematrix``) for mtrx files
+-``PIL`` (``pip install Pillow``) for JPG and PNG files
+
 ## How to use?
 
 Using the driftcorrection library is really straightforward. Typically it is convenient to use the following steps.
@@ -24,18 +36,6 @@ The SPM data can be of the following formats:
 - npy (numpy.array)
 
 More formats may be added at a later date.
-
-## Dependencies
-
-The following libraries are required (if not installed, copy/paste instructions between brackets into the terminal):
--``numpy`` (``pip install numpy``)
--``matplotlib`` (``pip install matplotlib``)
--``cv2`` (``pip install opencv-python``)
-
-The following libraries are optional (depending on the type of image format):
--``omicronscala`` (``pip install omicronscala``) for par files
--``access2thematrix`` (``pip install access2thematrix``) for mtrx files
--``PIL`` (``pip install Pillow``) for JPG and PNG files
 
 ### 1) Loading the data
 
