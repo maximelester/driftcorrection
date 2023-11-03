@@ -11,13 +11,19 @@ The python library (``driftcorrection.py``) allows to load and distort SPM image
 ## Dependencies
 
 The following libraries are required (if not installed, copy/paste instructions between brackets into the terminal):
+
 -``numpy`` (``pip install numpy``)
+
 -``matplotlib`` (``pip install matplotlib``)
+
 -``cv2`` (``pip install opencv-python``)
 
 The following libraries are optional (depending on the type of image format):
+
 -``omicronscala`` (``pip install omicronscala``) for par files
+
 -``access2thematrix`` (``pip install access2thematrix``) for mtrx files
+
 -``PIL`` (``pip install Pillow``) for JPG and PNG files
 
 The extra python file ``symbols.py`` contains a list of special characters for better console and matplotlib.pyplot display.
@@ -54,13 +60,17 @@ The raw data (along with the FFT) can be displayed using .ShowRaw()
 ### 3) Setting the raw lattice
 
 The measured lattice can be specified using two methods:
+
 - ``DriftCorrection.SetRawReci(K1, K2)``  with ``K1`` and ``K2`` both passed as ``tuple``, ``list`` or ``np.array`` (shape: (2,))
+
 - ``DriftCorrection.SetRawReal(r1, r2, omega, theta)`` with ``r1``, ``r2`` sides of parallelogram, ``omega`` angle between R1 and R2, and ``theta`` angle between x-axis and R1.
 
 ### 4) Setting the target lattice
 
 The target lattice is specified using similar methods:
+
 - ``DriftCorrection.SetTargetReci(K1, K2)``
+
 - ``DriftCorrection.SetTargetReal(r1, r2, omega, theta)``
 
 ### 5) Performing the transformation
