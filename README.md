@@ -26,7 +26,8 @@ For more detail, check the example file ``exec.py``, which corrects an atomicall
 
 The data can be loaded into a DriftCorrection object as follows:
 ``DriftCorrection(path)``
-If format does not contain metadata (specifying dimensions of the image), it is essential to use the following:
+
+If the format does not contain metadata (specifying dimensions of the image), it is essential to use the following:
 ``DriftCorrection(path, Lx, Ly)`` with ``Lx`` and ``Ly`` the x and y dimensions of the image.
 
 ### 2) Displaying raw data
@@ -36,31 +37,31 @@ The raw data (along with the FFT) can be displayed using .ShowRaw()
 ### 3) Setting the raw lattice
 
 The measured lattice can be specified using two methods:
-- ``.SetRawReci(K1, K2)``  with ``K1`` and ``K2`` both passed as ``tuple``, ``list`` or ``np.array`` (shape: (2,))
-- ``.SetRawReal(r1, r2, omega, theta)`` with ``r1``, ``r2`` sides of parallelogram, ``omega`` angle between R1 and R2, and ``theta`` angle between x-axis and R1.
+- ``DriftCorrection.SetRawReci(K1, K2)``  with ``K1`` and ``K2`` both passed as ``tuple``, ``list`` or ``np.array`` (shape: (2,))
+- ``DriftCorrection.SetRawReal(r1, r2, omega, theta)`` with ``r1``, ``r2`` sides of parallelogram, ``omega`` angle between R1 and R2, and ``theta`` angle between x-axis and R1.
 
 ### 4) Setting the target lattice
 
 The target lattice is specified using similar methods:
-- ``.SetTargetReci(K1, K2)``
-- ``.SetTargetReal(r1, r2, omega, theta)``
+- ``DriftCorrection.SetTargetReci(K1, K2)``
+- ``DriftCorrection.SetTargetReal(r1, r2, omega, theta)``
 
 ### 5) Performing the transformation
 
 The ``warpAffine`` function is embedded in a function and the transformation is achieved as follows:
-``.Transform()``
+``DriftCorrection.Transform()``
 
 ### 6) Displaying the results
 
 Once the transformation is done, the results can be plot as follows:
-``.ShowAll()``
+``DriftCorrection.ShowAll()``
 The details of the transformation (real and reciprocal matrices, dimensions, ...) can be printed into the console with the following command:
-``.PrintResults()``
+``DriftCorrection.PrintResults()``
 
 ### 7) Saving the data
 
 Lastly, if satisfied with the warped image, the warped real space image and/or the warped FFT can be saved with:
-``.SaveData(which)``, with ``which='real'`` for real space image only, ``which='fft'`` or ``which='both'``.
+``DriftCorrection.SaveData(which)``, with ``which='real'`` for real space image only, ``which='fft'`` or ``which='both'``.
 
 
 
