@@ -4,7 +4,15 @@ Drift correction method for SPM images, implemented in python, with an example f
 ## Introduction
 
 Full paper describing the model can be found elsewhere (DOI: to be disclosed).
-The python library (``driftcorrection.py``) allows to load and distort SPM images according to a measured and target lattice.
+The python library (``driftcorrection.py``) allows to load and distort SPM images according to a measured and target lattice. The image below shows the raw data (top left), the FFT of the raw data (bottom left) and the corrected real space image (top middle), the FFT of the corrected real space image (top bottom), and the warped FFT of the raw data (bottom right).
+
+![figure](figure.png)
+
+## How to use?
+
+Using the driftcorrection library is really straightforward. Typically it is convenient to use the following steps.
+For more detail, check the example file ``exec.py``, which corrects an atomically-resolved STM image of highly-oriented pyrolithic graphite.
+
 The SPM data can be of the following formats:
 
 - spm
@@ -16,11 +24,6 @@ The SPM data can be of the following formats:
 - npy (numpy.array)
 
 More formats may be added at a later date.
-
-## How to use?
-
-Using the driftcorrection library is really straightforward. Typically it is convenient to use the following steps.
-For more detail, check the example file ``exec.py``, which corrects an atomically-resolved STM image of highly-oriented pyrolithic graphite.
 
 ### 1) Loading the data
 
