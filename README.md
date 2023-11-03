@@ -20,6 +20,8 @@ The following libraries are optional (depending on the type of image format):
 -``access2thematrix`` (``pip install access2thematrix``) for mtrx files
 -``PIL`` (``pip install Pillow``) for JPG and PNG files
 
+The extra python file ``symbols.py`` contains a list of special characters for better console and matplotlib.pyplot display.
+
 ## How to use?
 
 Using the driftcorrection library is really straightforward. Typically it is convenient to use the following steps.
