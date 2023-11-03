@@ -1,5 +1,5 @@
 # driftcorrection
-Drift correction method for SPM images, implemented in python, with an example file using real STM data. (c) Maxime Le Ster, 2023
+Drift correction method and linear calibration for SPM images, implemented in python, with an example file using real STM data. (c) Maxime Le Ster, 2023
 
 ## Introduction
 
