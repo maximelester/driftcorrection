@@ -14,8 +14,8 @@ import symbols as sy
 import cv2
 
 # related to opening SPM images
-from omicronscala import load as stmload
-from access2thematrix import MtrxData
+# from omicronscala import load as stmload
+# from access2thematrix import MtrxData
 np.set_printoptions(precision=3)
 
 # related to opening other image fomats
@@ -472,11 +472,143 @@ class DriftCorrection:
 
 			if which == 'real' or which == 'both':
 				np.save(name, self.data_warp)
+				SaveArraySPM(data=self.data_warp, extent=self.extent_warp, name=f'warped_data.spm')
 
 			if which == 'fft' or which == 'both':
 				name = name[:-4]+f'_FFTWarp.npy'
 				np.save(name, self.fft_warped)
 
+
+
+
+
+
+# SPM file
+
+def SaveArraySPM(data, extent, name='data.spm'):
+
+	N, M = data.T.shape
+	x0, x1, y0, y1 = extent
+	lx, ly = x1-x0, y1-y0
+	lx_meter = 1e-10*lx
+	ly_meter = 1e-10*ly
+
+
+	data = data.ravel()
+
+
+
+	with open(name, "+x") as f:
+		f.write('ISO/TC 201 SPM data transfer format\n')
+		f.write('general information\n\n\n\n\n')
+		f.write('Created by Drift Correction by Maxime Le Ster (c).  Bogus acquisition parameters.\n')
+		f.write('MAP_SC\n')
+		f.write('-1\n'*7)
+		f.write('scan information\n')
+		f.write('REGULAR MAPPING\n')
+		f.write('XYZ closed-loop scanner\n')
+		f.write('sample XYZ scan\n')
+		f.write('X\n')
+		f.write('left to right\n')
+		f.write('Y\n')
+		f.write('top to bottom\n')
+		f.write(f'{N}\n')
+		f.write(f'{M}\n')
+		f.write('m\n')
+		f.write('m\n')
+		f.write(f'{lx_meter}\n')
+		f.write(f'{ly_meter}\n')
+		f.write('m\n')
+		f.write('m\n')
+		f.write('0\n')
+		f.write('0\n')
+		f.write('0\n')
+		f.write('m/s\n')
+		f.write('0.0\n')
+		f.write('Hz\n')
+		f.write('0.0\n\n')
+		f.write(f'sample biased\n')
+		f.write('0.0\n')
+		f.write('0\n')
+		f.write(f'\n'*5)
+		f.write('environment description\n')
+		f.write('software\n')
+		f.write('300\n')
+		f.write('1.0e5\n')
+		f.write('40\n\n')
+		f.write(f'probe description\n')
+		f.write('software\n\n')
+		f.write('0.0\n')
+		f.write('0.0\n')
+		f.write('0.0\n')
+		f.write('0\n')
+		f.write('0\n')
+		f.write('0\n\n')
+		f.write('sample description\n')
+		f.write('Z (Forward)\n\n\n')
+		f.write('single-channel mapping description\n')
+		f.write('Z (Forward)\n')
+		f.write('m\n\n')
+		f.write('spectroscopy description\n\n')
+		f.write('REGULAR\n\n')
+		f.write(f'n\n')
+		f.write('0.0\n')
+		f.write('0.0\n')
+		f.write('0.0\n')
+		f.write('0.0\n')
+		f.write('0\n')
+		f.write('0\n\n')
+		f.write('n\n')
+		f.write('0.0\n\n')
+		f.write('data treatment description\n')
+		f.write('post-treated data\n\n\n\n\n')
+		f.write('multi-channel mapping description\n')
+		f.write('1\n')
+		f.write('Z (Forward)\n')
+		f.write('m\n')
+		f.write('Z (Forward)\n')
+		f.write('\n')
+		f.write('n\n')
+		f.write('\n')
+		f.write('\n')
+		f.write('n\n')
+		f.write('\n')
+		f.write('\n')
+		f.write('n\n')
+		f.write('\n')
+		f.write('\n')
+		f.write('n\n')
+		f.write('\n')
+		f.write('\n')
+		f.write('n\n')
+		f.write('\n')
+		f.write('\n')
+		f.write('n\n')
+		f.write('\n')
+		f.write('\n')
+		f.write('n\n')
+		f.write('\n')
+		f.write('\n')
+		f.write('n\n')
+		f.write('\n')
+		f.write('\n')
+		f.write('n\n')
+		f.write('\n')
+		f.write('\n')
+		f.write('n\n')
+		f.write('\n')
+		f.write('end of header\n')
+		for d in data:
+			f.write(f'{d:.7e}\n')
+		f.write('end of experiment\n\n')
+
+
+'''
+
+
+
+
+'''
 
 # Display-only functions
 
