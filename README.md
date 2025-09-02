@@ -89,6 +89,6 @@ Lastly, if satisfied with the warped image, the warped real space image and/or t
 
 ## Others
 
-If useful, please cite the following article (DOI: to be disclosed). If you have any questions or queries, please send an email to maxime.lester@fis.uni.lodz.pl (or pawel.kowalczyk@uni.lodz.pl)
+If useful, please cite the following article (DOI: [10.1016/j.ultramic.2024.113984](https://doi.org/10.1016/j.ultramic.2024.113984)). If you have any questions or queries, please send an email to maxime.lester@fis.uni.lodz.pl (or pawel.kowalczyk@uni.lodz.pl)
 
 
